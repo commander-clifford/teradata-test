@@ -65,7 +65,30 @@
           </md-card>
         </div>
       </div>
-      <md-card>
+	  <md-card class="push-top">
+        <md-card-title>Traffic Sources</md-card-title>
+        <md-card-subtitle>User login clicks</md-card-subtitle>
+        <md-divider></md-divider>
+			<div style="height:250px;">
+				<ngx-charts-bar-vertical-2d
+		          [scheme]="traffic_colorScheme"
+		          [results]="traffic"
+		          [gradient]="gradient"
+		          [xAxis]="traffic_showXAxis"
+		          [yAxis]="traffic_showYAxis"
+		          [legend]="traffic_showLegend"
+		          [showXAxisLabel]="traffic_showXAxisLabel"
+		          [showYAxisLabel]="traffic_showYAxisLabel"
+		          [xAxisLabel]="traffic_xAxisLabel"
+		          [yAxisLabel]="traffic_yAxisLabel"
+		          [yAxisTickFormatting]="axisDigits"
+		          [barPadding]="2"
+		          [groupPadding]="8">
+		        </ngx-charts-bar-vertical-2d>
+			</div>
+        <md-divider></md-divider>
+      </md-card>
+      <md-card class="push-top">
         <md-card-title>Customer Activity</md-card-title>
         <md-card-subtitle>Recent activity from select members</md-card-subtitle>
         <md-divider></md-divider>
