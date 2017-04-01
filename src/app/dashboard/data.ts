@@ -140,3 +140,71 @@ export let multi: any = [
     ],
   },
 ];
+
+export let traffic: any = [
+  {
+    'name': 'Organic SEO',
+    'series': [
+      {
+        'value': 2469,
+        'name': 'Existing users',
+      },
+      {
+        'value': 3619,
+        'name': 'New users',
+      },
+    ],
+  },
+  {
+    'name': 'covalent.com',
+    'series': [
+      {
+        'value': 2452,
+        'name': 'Existing users',
+      },
+      {
+        'value': 4938,
+        'name': 'New users',
+      },
+    ],
+  },
+  {
+    'name': 'LinkedIn',
+    'series': [
+      {
+        'value': 4022,
+        'name': 'Existing users',
+      },
+      {
+        'value': 2345,
+        'name': 'New users',
+      },
+    ],
+  },
+  {
+    'name': 'Instagram',
+    'series': [
+      {
+        'value': 6194,
+        'name': 'Existing users',
+      },
+      {
+        'value': 6585,
+        'name': 'New users',
+      },
+    ],
+  },
+  {
+    'name': 'Facebook',
+    'series': [
+      {
+        'value': 4260,
+        'name': 'Existing users',
+      },
+      {
+        'value': 4810,
+        'name': 'New users',
+      },
+    ],
+  },
+];

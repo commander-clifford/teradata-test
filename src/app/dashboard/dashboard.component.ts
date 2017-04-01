@@ -6,7 +6,7 @@ import { TdLoadingService, TdDigitsPipe } from '@covalent/core';
 
 import { ItemsService, UsersService, ProductsService, AlertsService } from '../../services';
 
-import { multi } from './data';
+import { multi, traffic } from './data';
 
 @Component({
   selector: 'qs-dashboard',
@@ -24,6 +24,7 @@ export class DashboardComponent implements AfterViewInit {
   // Chart
   single: any[];
   multi: any[];
+  traffic: any[];
 
   view: any[] = [700, 400];
 
@@ -41,6 +42,20 @@ export class DashboardComponent implements AfterViewInit {
     domain: ['#1565C0', '#2196F3', '#81D4FA', '#FF9800', '#EF6C00'],
   };
 
+  // traffic options
+  traffic_showXAxis: boolean = true;
+  traffic_showYAxis: boolean = true;
+  traffic_gradient: boolean = false;
+  traffic_showLegend: boolean = true;
+  traffic_showXAxisLabel: boolean = true;
+  traffic_xAxisLabel: string = '';
+  traffic_showYAxisLabel: boolean = true;
+  traffic_yAxisLabel: string = 'Clicks';
+
+  traffic_colorScheme: any = {
+    domain: [ '#2196F3', '#FF9800' ],
+  };
+
   // line, area
   autoScale: boolean = true;
 
@@ -54,6 +69,13 @@ export class DashboardComponent implements AfterViewInit {
                 this.multi = multi.map((group: any) => {
                   group.series = group.series.map((dataItem: any) => {
                     dataItem.name = new Date(dataItem.name);
+                    return dataItem;
+                  });
+                  return group;
+                });
+                // Traffic Chart
+                this.traffic = traffic.map((group: any) => {
+                  group.series = group.series.map((dataItem: any) => {
                     return dataItem;
                   });
                   return group;
